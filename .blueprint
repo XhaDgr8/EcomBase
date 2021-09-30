@@ -1,0 +1,80 @@
+created:
+    - app/Http/Controllers/OmniController.php
+    - app/Http/Controllers/ProductController.php
+    - app/Http/Controllers/CategoryController.php
+    - app/Http/Controllers/BlogController.php
+    - database/factories/ProductFactory.php
+    - database/factories/PriceFactory.php
+    - database/factories/VariantFactory.php
+    - database/factories/TagFactory.php
+    - database/factories/MediaFactory.php
+    - database/factories/OrderFactory.php
+    - database/factories/CartFactory.php
+    - database/factories/AddressFactory.php
+    - database/factories/ReviewFactory.php
+    - database/factories/CategoryFactory.php
+    - database/factories/BlogFactory.php
+    - database/migrations/2021_09_28_002632_create_products_table.php
+    - database/migrations/2021_09_28_002633_create_prices_table.php
+    - database/migrations/2021_09_28_002634_create_variants_table.php
+    - database/migrations/2021_09_28_002635_create_tags_table.php
+    - database/migrations/2021_09_28_002636_create_media_table.php
+    - database/migrations/2021_09_28_002637_create_orders_table.php
+    - database/migrations/2021_09_28_002638_create_carts_table.php
+    - database/migrations/2021_09_28_002639_create_addresses_table.php
+    - database/migrations/2021_09_28_002640_create_reviews_table.php
+    - database/migrations/2021_09_28_002641_create_categories_table.php
+    - database/migrations/2021_09_28_002642_create_blogs_table.php
+    - app/Models/Product.php
+    - app/Models/Price.php
+    - app/Models/Variant.php
+    - app/Models/Tag.php
+    - app/Models/Media.php
+    - app/Models/Order.php
+    - app/Models/Cart.php
+    - app/Models/Address.php
+    - app/Models/Review.php
+    - app/Models/Category.php
+    - app/Models/Blog.php
+    - tests/Feature/Http/Controllers/OmniControllerTest.php
+    - tests/Feature/Http/Controllers/ProductControllerTest.php
+    - tests/Feature/Http/Controllers/CategoryControllerTest.php
+    - tests/Feature/Http/Controllers/BlogControllerTest.php
+    - app/Http/Requests/OmniStoreRequest.php
+    - app/Http/Requests/OmniUpdateRequest.php
+    - app/Http/Requests/ProductStoreRequest.php
+    - app/Http/Requests/ProductUpdateRequest.php
+    - app/Http/Requests/CategoryStoreRequest.php
+    - app/Http/Requests/CategoryUpdateRequest.php
+    - app/Http/Requests/BlogStoreRequest.php
+    - app/Http/Requests/BlogUpdateRequest.php
+    - resources/js/Pages/omni/index.vue
+    - resources/js/Pages/omni/create.vue
+    - resources/js/Pages/omni/show.vue
+    - resources/js/Pages/omni/edit.vue
+    - resources/js/Pages/product/index.vue
+    - resources/js/Pages/product/create.vue
+    - resources/js/Pages/product/show.vue
+    - resources/js/Pages/product/edit.vue
+    - resources/js/Pages/category/index.vue
+    - resources/js/Pages/category/create.vue
+    - resources/js/Pages/category/show.vue
+    - resources/js/Pages/category/edit.vue
+    - resources/js/Pages/blog/index.vue
+    - resources/js/Pages/blog/create.vue
+    - resources/js/Pages/blog/show.vue
+    - resources/js/Pages/blog/edit.vue
+updated:
+    - routes/web.php
+models:
+    Product: { user_id: 'id foreign:users.id', name: 'string:400', description: longtext, sku: 'string:400', stock: 'integer default:0', status: 'string:400 default:draft', variable: 'booleon default:true' }
+    Price: { product_id: 'id foreign:products.id nullable', varient_id: 'id foreign:varients.id nullable', price: 'integer dafault:0', compare_at_price: 'integer default:0', cost_price: 'integer dafault:0', shipping_price: 'integer dafault:0', tax: 'integer dafault:0' }
+    Variant: { user_id: 'id foreign:users.id', product_id: 'id foreign:products.id', option: 'string:400', value: 'string:400', sku: 'string:400', stock: 'integer default:0', display: 'string:400' }
+    Tag: { name: 'string:400 unique', timestamps: false }
+    Media: { user_id: 'id foreign:users.id', url: 'string:400', alt: 'string:400', type: 'string:400' }
+    Order: { user_id: 'id foreign:users.id', transaction_id: 'string:400', total: 'integer dafault:0', status: 'string:400 default:draft', description: 'longText nullable' }
+    Cart: { uuid: visitor_id, user_id: 'id foreign:users.id nullable' }
+    Address: { user_id: 'id foreign:users.id', order_id: 'id foreign:orders.id nullable', primary: 'boolean default:false', country: 'string:400', street_line_1: 'string:400', street_line_2: 'string:400 nullable', city: 'string:400', state: 'string:400', zip_code: 'string:400' }
+    Review: { user_id: 'id foreign:users.id', product_id: 'id foreign:products.id', content: longtext, star: 'integer dafault:0' }
+    Category: { user_id: 'id foreign:users.id', parent_id: 'id foreign:category.id', name: 'string:400', description: longText }
+    Blog: { user_id: 'id foreign:users.id', name: 'string:400', content: longText }

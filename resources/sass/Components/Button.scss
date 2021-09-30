@@ -1,0 +1,13 @@
+@layer base {
+    .btn {
+        @apply  inline-flex items-center px-4 py-2
+        rounded font-semibold text-xs shadow-lg font-bold
+        text-white uppercase tracking-widest
+        transition ease-in-out duration-150;
+    }
+
+}
+.btn-primary {
+    @apply bg-primary border border-transparent hover:bg-green-700
+    focus:bg-green-700 focus:outline-none
+}

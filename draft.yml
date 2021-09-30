@@ -1,0 +1,86 @@
+#models:
+#  Product:
+#    user_id: id foreign:users.id
+#    name: string:400
+#    description: longtext
+#    sku: string:400
+#    stock: integer default:0
+#    status: string:400 default:draft
+#    variable: booleon default:true
+#
+#  Price:
+#    product_id: id foreign:products.id nullable
+#    varient_id: id foreign:varients.id nullable
+#    price: integer dafault:0
+#    compare_at_price: integer default:0
+#    cost_price: integer dafault:0
+#    shipping_price: integer dafault:0
+#    tax: integer dafault:0
+#
+#  Variant:
+#    user_id: id foreign:users.id
+#    product_id: id foreign:products.id
+#    option: string:400
+#    value: string:400
+#    sku: string:400
+#    stock: integer default:0
+#    display: string:400
+#
+#  Tag:
+#    name: string:400 unique
+#    timestamps: false
+#
+#  Media:
+#    user_id: id foreign:users.id
+#    url: string:400
+#    alt: string:400
+#    type: string:400
+#
+#  Order:
+#    user_id: id foreign:users.id
+#    transaction_id: string:400
+#    total: integer dafault:0
+#    status: string:400 default:draft
+#    description: longText nullable
+#
+#  Cart:
+#    uuid: visitor_id #Str::orderedUuid(); from cookie
+#    user_id: id foreign:users.id nullable
+#
+#  Address:
+#    user_id: id foreign:users.id
+#    order_id: id foreign:orders.id nullable
+#    primary: boolean default:false
+#    country: string:400
+#    street_line_1: string:400
+#    street_line_2: string:400 nullable
+#    city: string:400
+#    state: string:400
+#    zip_code: string:400
+#
+#  Review:
+#    user_id: id foreign:users.id
+#    product_id: id foreign:products.id
+#    content: longtext
+#    star: integer dafault:0
+#
+#  Category:
+#    user_id: id foreign:users.id
+#    parent_id: id foreign:Category.id
+#    name: string:400
+#    description: longText
+#
+#  Blog:
+#    user_id: id foreign:users.id
+#    name: string:400
+#    content: longText
+#
+#controllers:
+#  Omni:
+#    resource
+#  Product:
+#    resource
+#  Category:
+#    resource
+#  Blog:
+#    resource

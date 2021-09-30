@@ -1,0 +1,7 @@
+@layer base {
+    .drop-down-link {
+        @apply block w-full px-4 py-2 text-left text-sm leading-5 text-primary
+        hover:bg-green-100 focus:outline-none focus:bg-green-100 transition
+        duration-150 ease-in-out
+    }
+}
