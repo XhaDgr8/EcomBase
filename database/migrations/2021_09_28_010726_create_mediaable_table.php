@@ -13,7 +13,7 @@ class CreateMediaableTable extends Migration
      */
     public function up()
     {
-        Schema::create('mediaable', function (Blueprint $table) {
+        Schema::create('mediaables', function (Blueprint $table) {
             $table->bigInteger('media_id');
             $table->morphs('mediaable');
         });

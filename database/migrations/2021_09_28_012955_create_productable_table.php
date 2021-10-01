@@ -13,11 +13,11 @@ class CreateProductableTable extends Migration
      */
     public function up()
     {
-        Schema::create('productable', function (Blueprint $table) {
+        Schema::create('productables', function (Blueprint $table) {
             $table->bigInteger('product_id');
             $table->morphs('productable');
             $table->foreignId('variant_id')->constrained();
-            $table->integer('quantity');
+            $table->integer('quantity')->default(1);
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ class CreateProductableTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('productable');
+        Schema::dropIfExists('productables');
     }
 }
