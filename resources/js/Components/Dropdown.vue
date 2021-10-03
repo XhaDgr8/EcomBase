@@ -2,6 +2,20 @@
     <div class="relative">
         <div @click="open = ! open">
             <slot name="trigger" />
+            <button v-if="!$slots['trigger']" class="btn btn-secondary px-2">
+                <svg class="h-5 w-5" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                    <path
+                        :class="{'hidden': open, 'inline-flex': ! open }"
+                        stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M4 6h16M4 12h16M4 18h16"
+                    />
+                    <path
+                        :class="{'hidden': ! open, 'inline-flex': open }"
+                        stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M6 18L18 6M6 6l12 12"
+                    />
+                </svg>
+            </button>
         </div>
 
         <!-- Full Screen Dropdown Overlay -->
@@ -15,11 +29,11 @@
             leave-from-class="transform opacity-100 scale-100"
             leave-to-class="transform opacity-0 scale-95">
             <div v-show="open"
-                    class="absolute z-50 mt-2 rounded-md shadow-lg"
+                    class="absolute shadow-2xl bg-white z-50 mt-2 rounded-md "
                     :class="[widthClass, alignmentClasses]"
                     style="display: none;"
                     @click="open = false">
-                <div class="rounded-md ring-1 ring-black ring-opacity-5" :class="contentClasses">
+                <div class="ring-1 ring-black ring-opacity-5" :class="contentClasses">
                     <slot name="content" />
                 </div>
             </div>
@@ -39,7 +53,7 @@ export default {
             default: '48'
         },
         contentClasses: {
-            default: () => ['py-1', 'bg-white']
+            default: () => ['']
         }
     },
 

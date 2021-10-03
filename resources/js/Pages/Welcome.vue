@@ -1,7 +1,7 @@
 <template>
     <Head title="Welcome" />
 
-    <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center sm:pt-0">
+    <div style="background-color: #AC66CE" class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center sm:pt-0">
         <div v-if="canLogin" class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
             <Link v-if="$page.props.auth.user" href="/dashboard" class="text-sm text-gray-700 underline">
                 Dashboard
@@ -21,7 +21,7 @@
         <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
             <button type="submit" class="btn btn-primary" @click.prevent="submitForm">Add A Cookie</button>
 
-            <div class="mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
+            <div class="mt-8 bg-glass dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
                 <div class="grid grid-cols-1 md:grid-cols-2">
                     <div class="p-6">
                         <div class="flex items-center">

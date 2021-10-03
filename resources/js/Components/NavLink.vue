@@ -17,8 +17,8 @@ export default {
     computed: {
         classes() {
             return this.active
-                ? 'nav-link-active'
-                : 'nav-primary'
+                ? 'nav-primary'
+                : 'nav-link-active'
         }
     }
 }

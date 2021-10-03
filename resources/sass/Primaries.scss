@@ -1,31 +1,77 @@
 @layer base {
+
+    .bg-glass {
+        backdrop-filter: blur(13px) saturate(161%);
+        -webkit-backdrop-filter: blur(13px) saturate(161%);
+        background-color: rgba(255, 255, 255, 0.36);
+        border: 1px solid rgba(209, 213, 219, 0.3);
+    }
+
+    .bg-glass-light {
+        backdrop-filter: blur(3px) saturate(180%);
+        -webkit-backdrop-filter: blur(3px) saturate(180%);
+        background-color: rgba(255, 255, 255, 0.23);
+        border: 1px solid rgba(209, 213, 219, 0.3);
+    }
+
+    .bg-glass-hard {
+        backdrop-filter: blur(25px) saturate(172%);
+        -webkit-backdrop-filter: blur(25px) saturate(172%);
+        background-color: rgba(255, 255, 255, 0.72);
+    }
+
+//  Colour Primary
     .bg-primary {
-        @apply bg-green-500
+        @apply bg-pink-500
     }
 
     .bg-primary-actions {
-        @apply bg-green-700
+        @apply bg-pink-700
     }
 
     .border-primary {
-        @apply border-green-700
+        @apply border-pink-700
     }
 
     .text-primary {
-        @apply text-green-500
+        @apply text-pink-500
     }
 
-    .nav-link {
-        @apply inline-flex items-center px-1 pt-1 border-b-2 text-sm
-        font-medium leading-5 transition duration-150 ease-in-out focus:outline-none
-        hover:text-gray-700 hover:border-gray-300 focus:text-gray-700 focus:border-indigo-700;
+//  Colour Secondary
+
+    .bg-secondary {
+        @apply bg-gray-100
     }
 
-    .nav-primary {
-        @apply text-gray-900 border-primary;
+    .bg-secondary-actions {
+        @apply bg-gray-100
     }
 
-    .nav-active {
-        @apply text-gray-500 border-transparent;
+    .border-secondary {
+        @apply border-gray-700
+    }
+
+    .text-secondary {
+        @apply text-gray-400
+    }
+
+//  Flex Utilities
+    .flex-between {
+        @apply flex justify-between;
+    }
+
+
+//    Headings
+    h1 {
+        @apply font-semibold text-gray-800 leading-tight text-lg;
+    }
+    h2{
+        @apply font-semibold text-gray-800 leading-tight text-base;
+    }
+    h3{
+        @apply font-semibold text-gray-800 leading-tight text-sm;
+    }
+    p {
+        @apply text-gray-800 leading-tight text-xs;
     }
 }

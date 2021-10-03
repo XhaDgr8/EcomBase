@@ -1,13 +1,24 @@
 @layer base {
     .btn {
         @apply  inline-flex items-center px-4 py-2
-        rounded font-semibold text-xs shadow-lg font-bold
-        text-white uppercase tracking-widest
+        rounded font-semibold text-xs shadow-md font-bold
+        uppercase tracking-widest cursor-pointer
         transition ease-in-out duration-150;
     }
 
-}
-.btn-primary {
-    @apply bg-primary border border-transparent hover:bg-green-700
-    focus:bg-green-700 focus:outline-none
+    .btn-primary {
+        @apply bg-primary border border-transparent
+        hover:bg-pink-400 hover:shadow-lg
+        focus:bg-pink-400 focus:outline-none text-white;
+    }
+    .btn-primary:hover,.btn-secondary:hover {
+        transform: scale(1.02)!important;
+    }
+
+    .btn-secondary {
+        @apply bg-secondary border border-transparent
+        hover:bg-gray-200 hover:shadow-lg text-gray-800
+        focus:bg-gray-200 focus:outline-none
+    }
+
 }

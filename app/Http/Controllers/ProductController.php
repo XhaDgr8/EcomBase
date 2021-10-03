@@ -6,27 +6,31 @@ use App\Http\Requests\ProductStoreRequest;
 use App\Http\Requests\ProductUpdateRequest;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
+use Inertia\Inertia;
 
 class ProductController extends Controller
 {
     /**
      * @param \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\Response
+     * @return \Inertia\Response
      */
     public function index(Request $request)
     {
         $products = Product::all();
 
-        return view('Product.index', compact('products'));
+        return Inertia::render('Product/index', [
+            'products' => $products,
+        ]);
     }
 
     /**
      * @param \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\Response
+     * @return \Inertia\Response
      */
-    public function create(Request $request)
+    public function create(Request $request): \Inertia\Response
     {
-        return view('Product.create');
+        return Inertia::render('Product/create');
     }
 
     /**

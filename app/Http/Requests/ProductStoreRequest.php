@@ -34,3 +34,9 @@ class ProductStoreRequest extends FormRequest
         ];
     }
 }
+
+
+/*
+ * p = #E6C5ED
+ * b = #FAE0FF
+*/
