@@ -13,13 +13,20 @@
             </Link>
         </div>
 
-        <div class="row gap-4 mt-6">
+        <div id="createProduct">
 
-            <div class="col-span-6 p-8 bg-glass rounded-md">
-                <h1>Images Section</h1>
+            <div class="col-span-12 md:col-span-6 flex">
+                <div class="bg-glass relative overflow-hidden rounded-md shadow-inner">
+                    <img :src="$page.props.asset + '/2.jpg'" alt="">
+                    <label for="primary-img" class="absolute top-0 left-0 right-0 bottom-0 cursor-pointer shadow-inner"></label>
+                    <input type="file" id="primary-img" class="hidden">
+                    <div class="bg-glass p-8 -mt-12">
+                        <input type="text">
+                    </div>
+                </div>
             </div>
 
-            <div class="col-span-4 p-8 bg-glass rounded-md">
+            <div class="col-span-12 md:col-span-6 lg:col-span-4">
                 <h1>General Section</h1>
                 <ol>
                     <li>name</li>
@@ -29,7 +36,7 @@
                 </ol>
             </div>
 
-            <div class="col-span-2">
+            <div class="col-span-12 md:col-span-4 lg:col-span-2">
                 <div class="rounded-md bg-glass p-8">
                     <h1>Product Status</h1>
                     <p>Set the Products Visibility to True or False</p>
@@ -40,7 +47,7 @@
                 </div>
             </div>
 
-            <div class="col-span-5">
+            <div class="col-span-12 md:col-span-5">
                 <div class="rounded-md bg-glass p-8">
                     <h1>Product Status</h1>
                     <p>Set the Products Visibility to True or False</p>

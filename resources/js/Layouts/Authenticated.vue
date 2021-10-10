@@ -1,5 +1,4 @@
 <template>
-    <img :src="$page.props.asset + '/mesh_1.gif'" alt="" class="absolute top-0 left-0 w-screen h-screen z-0">
     <div class="min-h-screen">
         <nav-bar />
         <!-- Page Heading
@@ -8,7 +7,7 @@
             </header>
         -->
         <!-- Page Content -->
-        <main class="container my-8 relative">
+        <main class="container my-8">
             <slot />
         </main>
     </div>
