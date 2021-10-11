@@ -1,6 +1,56 @@
 #createProduct {
     @apply grid grid-cols-12 mt-6 gap-4;
     > * {
-        @apply p-8 bg-glass rounded-md;
+        @apply p-4 bg-glass rounded-md;
     }
+}
+
+#img-box {
+    @apply col-span-12 md:col-span-6 grid grid-cols-12 gap-1;
+    > div:nth-child(-n + 2) {
+        @apply relative h-80 col-span-6;
+    }
+    > :first-child {
+        @apply transition-all duration-500 ease-in-out mr-1 shadow-inner rounded-md overflow-hidden;
+    }
+    > :first-child label {
+        @apply absolute top-0 left-0 right-0 bottom-0 cursor-pointer shadow-inner;
+        display:flex;justify-content:center;align-items:center;
+    }
+}
+
+#more-img-grid {
+    @apply grid grid-cols-12 gap-1;
+    > div {
+        @apply col-span-6 p-1 bg-glass h-48 rounded-md shadow-md;
+    }
+}
+#scrollbox {
+    @apply rounded-md bg-glass shadow-inner relative z-50;
+    overflow: auto;
+    background-repeat: no-repeat;
+    background-size: 100% 40px, 100% 40px, 100% 14px, 100% 14px;
+    -webkit-backdrop-filter: blur(3px) saturate(180%);
+    background-attachment: local, local, scroll, scroll;
+}
+.scroll-shadow-top {
+    background:
+        /* Shadow covers */
+        linear-gradient(white 30%, rgba(255,255,255,0)),
+        linear-gradient(rgba(255,255,255,0), white 70%) 0 100%,
+
+            /* Shadows */
+        radial-gradient(farthest-side at 50% 0, rgba(0,0,0,.72), rgba(0,0,0,0)),
+        radial-gradient(farthest-side at 50% 100%, rgba(0,0,0,.72), rgba(0,0,0,0)) 0 100%;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+#scrollbox::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+#scrollbox {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
 }

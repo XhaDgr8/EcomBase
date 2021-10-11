@@ -11,6 +11,10 @@ use Inertia\Inertia;
 
 class ProductController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth')->only(['create']);
+    }
     /**
      * @param \Illuminate\Http\Request $request
      * @return \Inertia\Response

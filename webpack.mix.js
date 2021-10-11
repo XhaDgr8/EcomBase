@@ -18,7 +18,7 @@ mix.js('resources/js/app.js', 'public/js').vue()
         postCss: [ tailwindcss('./tailwind.config.js') ],
     })
     .webpackConfig(require('./webpack.config'))
-    // .browserSync('http://127.0.0.1:8000/')
+    .browserSync('http://127.0.0.1:8000/')
     .disableNotifications();
 
 if (mix.inProduction()) {

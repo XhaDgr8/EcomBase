@@ -1,6 +1,15 @@
 body {
     background-image: url("/storage/1.png");
-    background-color: #0FB383;background-repeat: no-repeat;
+    background-color: #0FB383;/* #0FB383 */
+    background-size: contain;
+    background-position: bottom;
+    background-repeat: no-repeat;
+}
+
+.bg-img-center {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 @layer base {
@@ -23,6 +32,7 @@ body {
         backdrop-filter: blur(25px) saturate(172%);
         -webkit-backdrop-filter: blur(25px) saturate(172%);
         background-color: rgba(255, 255, 255, 0.72);
+        border: 1px solid rgba(209, 213, 219, 0.3);
     }
 
 //  Colour Primary

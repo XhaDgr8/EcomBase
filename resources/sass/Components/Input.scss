@@ -1,8 +1,9 @@
-@layer base {
-    .input {
-        @apply border-0 rounded transition-all ease-linear shadow bg-blue-50 border-b;
-    }
-    .input:hover {
-        @apply shadow-md
-    }
+.input {
+    @apply border-0 rounded transition-all ease-linear shadow bg-glass;
+}
+.input:hover {
+    @apply shadow-md
+}
+.input:focus {
+    @apply shadow-md bg-glass
 }
