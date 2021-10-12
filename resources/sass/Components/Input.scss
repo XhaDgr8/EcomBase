@@ -1,3 +1,30 @@
+.form-group {
+    @apply relative h-10;
+    flex-wrap: wrap;
+    > label {
+        @apply absolute z-20;
+        height: inherit;
+        margin-top: 8px;margin-left: 8px;
+        transform-origin: center;
+        pointer-events: none;
+        transition: ease all .1s;
+        font-size: medium;
+    }
+    input {
+        @apply rounded-md shadow bg-glass absolute h-10 w-full;
+        transition: ease all .1s;
+        box-sizing: border-box;
+    }
+    input:focus ~ label {
+        margin-top: -16px;
+        margin-left: 2px;
+        font-size: small;
+    }
+    input:focus, input:hover {
+        @apply shadow-md;
+    }
+}
+
 .input {
     @apply border-0 rounded transition-all ease-linear shadow bg-glass;
 }

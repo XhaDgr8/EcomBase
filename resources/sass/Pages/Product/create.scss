@@ -22,9 +22,10 @@
 #more-img-grid {
     @apply grid grid-cols-12 gap-1;
     > div {
-        @apply col-span-6 p-1 bg-glass h-48 rounded-md shadow-md;
+        @apply col-span-6 bg-glass h-48 p-1 rounded-md shadow-md;
     }
 }
+
 #scrollbox {
     @apply rounded-md bg-glass shadow-inner relative z-50;
     overflow: auto;

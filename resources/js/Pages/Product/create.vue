@@ -40,7 +40,7 @@
                         <div class="bg-img-center w-full" v-for="(item, index) in form.files"
                              :style="{ 'background-image': 'url(' + item['preview'] + ')' }">
                             <div class="absolute w-full bottom-0 pb-3">
-                                <input type="text" :id="`img-`+index" class="input w-full"
+                                <input type="text" class="input p-1" style="width: 94%"
                                        v-model="form.files[index]['alt']"
                                        :placeholder="item['name']">
                             </div>
@@ -60,13 +60,24 @@
             </div>
 
             <div class="col-span-12 md:col-span-6 lg:col-span-4">
+
                 <h1>General Section</h1>
-                <ol>
-                    <li>name</li>
-                    <li>sku</li>
-                    <li>stock</li>
-                    <li>variable</li>
-                </ol>
+
+                <div class="form-group mt-5">
+                    <input type="text" id="Name">
+                    <label for="Name">Name</label>
+                </div>
+
+                <div class="form-group mt-5">
+                    <input type="text" id="SKU">
+                    <label for="SKU">SKU</label>
+                </div>
+
+                <div class="form-group mt-5">
+                    <input type="text" id="Stock">
+                    <label for="Stock">Stock</label>
+                </div>
+
             </div>
 
             <div class="col-span-12 md:col-span-4 lg:col-span-2">
