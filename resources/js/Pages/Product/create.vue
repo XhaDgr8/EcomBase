@@ -63,10 +63,14 @@
 
                 <h1>General Section</h1>
 
-                <div class="form-group mt-5">
-                    <input type="text" id="Name">
-                    <label for="Name">Name</label>
-                </div>
+                <Input id="name" class="mt-5" type="text">
+                    Name
+                </Input>
+
+<!--                <div class="form-group mt-5">-->
+<!--                    <input type="text" id="Name">-->
+<!--                    <label for="Name">Name</label>-->
+<!--                </div>-->
 
                 <div class="form-group mt-5">
                     <input type="text" id="SKU">
@@ -111,11 +115,12 @@
 import BreezeAuthenticatedLayout from '@/Layouts/Authenticated.vue'
 import {Head} from '@inertiajs/inertia-vue3';
 import { Link } from '@inertiajs/inertia-vue3';
+import Input from '@Components/Input';
 
 export default {
     components: {
         BreezeAuthenticatedLayout,
-        Head, Link
+        Head, Link, Input,
     },
     data() {
         return {
